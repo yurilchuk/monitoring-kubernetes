@@ -209,19 +209,19 @@ spec:
         app: prometheus-server
     spec:
       containers:
-        - name: prometheus
-          image: prom/prometheus
-          args:
-            - "--config.file=/etc/prometheus/prometheus.yml"
-            - "--storage.tsdb.path=/prometheus/"
-          ports:
-            - containerPort: 9090
-          volumeMounts:
-            - name: prometheus-config-volume
-              mountPath: /etc/prometheus/
-            - name: prometheus-storage-volume
-              mountPath: /prometheus/
-          resources:
+      - name: prometheus
+        image: prom/prometheus
+        args:
+          - "--config.file=/etc/prometheus/prometheus.yml"
+          - "--storage.tsdb.path=/prometheus/"
+        ports:
+          - containerPort: 9090
+        volumeMounts:
+          - name: prometheus-config-volume
+            mountPath: /etc/prometheus/
+          - name: prometheus-storage-volume
+            mountPath: /prometheus/
+        resources:
           limits:
             cpu: 100m
             memory: 64mi

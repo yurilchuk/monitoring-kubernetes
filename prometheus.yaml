@@ -223,11 +223,11 @@ spec:
             mountPath: /prometheus/
         resources:
           limits:
-            cpu: 100m
-            memory: 64Mi
+            cpu: 1000m
+            memory: 2Gi
           requests:
-            cpu: 50m
-            memory: 16Mi
+            cpu: 100m
+            memory: 512Mi
       volumes:
         - name: prometheus-storage-volume
           emptyDir: {}
